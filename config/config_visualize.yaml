@@ -1,0 +1,30 @@
+base:
+    example:
+      _target_: example.__main__.Example
+      detector:
+        _target_: example.implication.detectors.person_detector.PersonDetector
+        device: CPU
+        performance_hint: LATENCY
+        execution_mode_hint: PERFORMANCE
+        inference_precision_hint: f32
+        model: /home/kirill/PycharmProjects/DetectingExample/assets/person-detection/person-detection-0202-fp32.xml
+        weights: /home/kirill/PycharmProjects/DetectingExample/assets/person-detection/person-detection-0202-fp32.bin
+        input_type: float32
+        input_dims_order: bchw
+        swap_rb: false
+        height: 512
+        width: 512
+        score_threshold: 0.6
+        nms_threshold: 0.4
+      visualizer:
+        _target_: example.implication.visualizers.dummy_visualize.DummyVisualizer
+      decoder:
+        _target_: example.implication.decoders.opencv_video_decoder.OpenCVVideoDecoder
+        video_path: /home/kirill/Desktop/cropps/oper-1-ligovsk/video/2023-11-21 16.10.00 - 16.40.00.mp4
+        process_each: 52
+      saver:
+        _target_: example.implication.savers.opencv_saver.OpenCVSaver
+        save_dir: /home/kirill/Desktop/cropps/oper-1-ligovsk
+      painter:
+        _target_: example.implication.painter.opencv_paint.OpenCVPainter
+
