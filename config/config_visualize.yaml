@@ -7,8 +7,8 @@ base:
         performance_hint: LATENCY
         execution_mode_hint: PERFORMANCE
         inference_precision_hint: f32
-        model: /home/kirill/PycharmProjects/DetectingExample/assets/person-detection/person-detection-0202-fp32.xml
-        weights: /home/kirill/PycharmProjects/DetectingExample/assets/person-detection/person-detection-0202-fp32.bin
+        model: ${BASE_DIR:DetectingExample/assets/person-detection/person-detection-0202-fp32.xml}
+        weights: ${BASE_DIRDetectingExample/assets/person-detection/person-detection-0202-fp32.bin}
         input_type: float32
         input_dims_order: bchw
         swap_rb: false
